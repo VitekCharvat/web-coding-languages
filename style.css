@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+/* Barvy a fonty */
+:root {
+    --dark: #152c3b;
+    --light: #fffdf9;
+    --text: #1d2733;
+    --muted-text: #66727a;
+    --border: #dce2df;
+    --body-font: "DM Sans", sans-serif;
+    --title-font: "Space Grotesk", sans-serif;
+}
+
+/* Základ stránky */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    background: var(--light);
+    font-family: var(--body-font);
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+h1, h2, h3 {
+    font-family: var(--title-font);
+}
+
+.container {
+    width: 90%;
+    max-width: 1120px;
+    margin: auto;
+}
+
+/* Navigace a úvod */
+.hero {
+    padding-bottom: 55px;
+    color: var(--text);
+    background: var(--light);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 78px;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    color: var(--dark);
+    font: bolder 1rem var(--title-font);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--dark);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--dark);
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 8px;
+}
+
+.nav-links a:hover {
+    color: var(--light);
+    background-color: var(--dark);
+    border-radius: 15px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    min-height: 380px;
+}
+
+.hero-text {
+    max-width: 550px;
+}
+
+.eyebrow {
+    margin-bottom: 15px;
+    color: var(--muted-text);
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1 {
+    margin-bottom: 25px;
+    font-size: 5rem;
+    line-height: 1;
+}
+
+.intro {
+    max-width: 465px;
+    margin-bottom: 30px;
+    color: var(--muted-text);
+    line-height: 1.7;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 20px;
+    color: var(--light);
+    background: var(--dark);
+    border-radius: 2px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Sekce o tématu */
+.about {
+    padding: 75px 0;
+}
+
+.section-heading,
+.section-title-row {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+.section-heading p,
+.small-text {
+    max-width: 410px;
+    color: var(--muted-text);
+    line-height: 1.7;
+}
+
+/* Karty jazyků */
+.languages {
+    padding: 65px 0;
+    background: var(--light);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.section-title-row {
+    margin-bottom: 35px;
+}
+
+.language-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 17px;
+}
+
+.language-card {
+    min-height: 230px;
+    padding: 22px;
+    background: var(--light);
+    border: 1px solid var(--border);
+}
+
+.language-icon {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 28px;
+    color: white;
+    background: var(--dark);
+    border-radius: 2px;
+    font: bold 1rem var(--title-font);
+    place-items: center;
+}
+
+.language-card h3 {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.language-card p {
+    color: var(--muted-text);
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+.language-card span {
+    color: var(--muted-text);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+
+/* Zápatí */
+footer {
+    color: var(--muted-text);
+    background: var(--light);
+    border-top: 1px solid var(--border);
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 88px;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+#ai, #author {
+    font-weight: bolder;
+}
+
+#ai a {
+    text-decoration: none;
+    color: var(--muted-text);
+}
+
+#ai a:hover {
+    color: var(--dark);
+}
