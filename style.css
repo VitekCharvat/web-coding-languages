@@ -228,6 +228,19 @@ footer {
     font-size: 1rem;
 }
 
+#home-page {
+    padding: 8px 10px;
+    text-decoration: none;
+    color: var(--muted-text);
+    font-weight: lighter ;
+}
+
+#home-page:hover {
+    color: var(--light);
+    background-color: var(--dark);
+    border-radius: 17px;
+}
+
 #ai, #author {
     font-weight: bolder;
 }
