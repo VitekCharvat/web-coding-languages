@@ -192,10 +192,15 @@ a:focus-visible {
 /* Rozbalovací témata jsou pod sebou, aby byl otevřený obsah přehledný. */
 .topic-list {
   display: grid;
+  /* Nulová minimální šířka zabrání tomu, aby dlouhý kód
+     roztáhl celý sloupec za okraj mobilní obrazovky. */
+  grid-template-columns: minmax(0, 1fr);
   gap: 16px;
 }
 
 .topic {
+  /* Grid položka se smí zmenšit pod přirozenou šířku svého obsahu. */
+  min-width: 0;
   background: var(--light);
   border: 1px solid #cbd7d2;
   border-left: 4px solid var(--yellow);
@@ -210,6 +215,7 @@ a:focus-visible {
   font-family: var(--title-font);
   font-size: 1rem;
   font-weight: bold;
+  overflow-wrap: anywhere;
 }
 
 /* Ponecháváme nativní trojúhelník ukazující stav rozbalení. */
@@ -266,6 +272,8 @@ a:focus-visible {
   background: var(--surface);
   border-radius: 4px;
   font-weight: bold;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .language-logos img {
@@ -273,6 +281,7 @@ a:focus-visible {
   object-fit: contain;
   width: 32px;
   height: 32px;
+  flex-shrink: 0;
 }
 
 /* Dva stejné sloupce pro použití oboru a doporučený začátek.
@@ -371,6 +380,8 @@ footer {
 
 .footer-content p {
   margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 footer a {
@@ -443,6 +454,11 @@ footer a:hover {
 
   .topic-content {
     padding: 16px;
+  }
+
+  .topic-guide {
+    padding: 16px;
+    gap: 16px;
   }
 
   .topic summary {
