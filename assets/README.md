@@ -1,5 +1,7 @@
 # Návrhy vzhledu
 
+Složka obsahuje také `logos/` s místními SVG logy jazyků a nástrojů. Zdroj a použití popisuje `logos-sources.md`; licence Deviconu je přiložená v `logos/LICENSE-devicon.txt`.
+
 Tato složka obsahuje obrázkové mockupy školního webu codebase, vytvořené pomocí imagegen.
 
 | Soubor | Popis |

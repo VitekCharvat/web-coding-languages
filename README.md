@@ -1,6 +1,6 @@
 # codebase – Programovací jazyky
 
-Školní projekt pro výuku HTML a CSS. Jednostránkový web představuje Python, JavaScript, Javu a C++. Není oficiální stránkou těchto jazyků.
+Školní projekt pro výuku HTML a CSS. Jednostránkový web představuje obory programování, používané jazyky a krátké ukázky kódu. Není oficiální stránkou těchto jazyků.
 
 ## Spuštění
 
@@ -10,16 +10,31 @@ Publikovaná stránka: https://vitekcharvat.github.io/web-coding-languages/
 
 ## Soubory
 
-- `index.html` – navigace, označení školního projektu, úvod, popis tématu, karty a zápatí.
+- `index.html` – navigace, označení školního projektu, úvod, rozbalovací témata a zápatí.
 - `style.css` – barvy, typografie, rozložení a responzivita. Složitější pravidla mají vysvětlující komentáře.
 - `codebase-favicon.svg` – ikona stránky.
 - `assets/` – barevné návrhy a schválený mockup. Přehled je v `assets/README.md`.
 
 ## Design a úpravy
 
-Schválený návrh je `assets/mockup-04-puvodni-vzhled.png`. Používá tmavě modrou, žluté zvýraznění, krémové pozadí a barevné karty. Barvy a fonty lze změnit v bloku `:root` na začátku CSS; pravidla je používají přes `var()`.
+Schválený návrh je `assets/mockup-04-puvodni-vzhled.png`. Používá tmavě modrou, žluté zvýraznění a krémové pozadí. Původní karty jazyků byly nahrazené rozbalovacími tématy. Barvy a fonty lze změnit v bloku `:root` na začátku CSS; pravidla je používají přes `var()`.
 
-Web používá pouze HTML a CSS, bez JavaScriptu. Na široké obrazovce jsou čtyři karty vedle sebe, do 850 px dvě a do 500 px jedna. V menším zobrazení zůstávají v navigaci pouze ikony; odkazy mají `aria-label` pro čtečky obrazovky.
+Web používá pouze HTML a CSS. Rozbalování zajišťují nativní prvky `details` a `summary`; fungují i klávesnicí a více témat může být otevřených současně. V menším zobrazení zůstávají v navigaci pouze ikony; odkazy mají `aria-label` pro čtečky obrazovky. Dlouhý kód lze vodorovně posouvat uvnitř bloku.
+
+## Témata a ukázky
+
+- Vývoj her
+- Umělá inteligence (AI)
+- Strojové učení
+- Vývoj webů
+- Mobilní aplikace
+- Data a databáze
+- Automatizace a skripty
+- Systémy a vestavěná zařízení
+
+Každé téma obsahuje loga jazyků, rozšířený popis, příklady využití, doporučení pro začátečníka a ilustrační příklad s vysvětlením. Ukázky jsou pouze text v `pre/code` a web je nespouští, ani JavaScript v ukázce webového vývoje. Předpoklady jednotlivých příkladů jsou uvedené nad kódem. Pro přidání dalšího tématu zkopíruj blok `details class="topic"` v HTML.
+
+Barevnost kódu je zapsaná ručně pomocí `span` s třídami `token-keyword`, `token-string`, `token-number`, `token-function` a `token-comment`. Při změně příkladů je potřeba upravit i tyto značky. Loga jazyků jsou místní SVG z Deviconu v `assets/logos/`; zdroje popisuje `assets/logos-sources.md`.
 
 ## Validace
 

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="cs">
   <head>
+    <!-- Metadata, ikona a externí knihovna ikon; vzhled je v místním CSS. -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="codebase-favicon.svg" type="image/svg+xml" />
@@ -25,9 +26,9 @@
             </a>
           </li>
           <li>
-            <a href="#languages" title="Jazyky" aria-label="Jazyky">
+            <a href="#languages" title="Obory" aria-label="Obory programování">
               <i class="fa-solid fa-code" aria-hidden="true"></i>
-              <span>Jazyky</span>
+              <span>Obory</span>
             </a>
           </li>
         </ul>
@@ -36,14 +37,16 @@
       <!-- Hlavní text úvodu -->
       <div class="hero-content container">
         <div class="hero-text">
-          <p class="school-notice">Školní projekt – vytvořeno pro výuku HTML a CSS.</p>
+          <p class="school-notice">
+            Školní projekt – vytvořeno pro výuku HTML a CSS.
+          </p>
           <p class="eyebrow">SVĚT KÓDU</p>
           <h1>Programovací<br /><span>jazyky.</span></h1>
           <p class="intro">
             Programovací jazyky jsou nástroje, se kterými proměníme nápady ve
             weby, hry, aplikace a mnoho dalšího.
           </p>
-          <a class="button" href="#languages">Prozkoumat jazyky</a>
+          <a class="button" href="#languages">Prozkoumat obory</a>
         </div>
       </div>
     </header>
@@ -62,57 +65,750 @@
         </div>
       </section>
 
-      <!-- Přehled programovacích jazyků -->
+      <!-- Rozbalovací přehled oborů: details funguje bez JavaScriptu. -->
       <section class="languages" id="languages">
         <div class="container">
-          <!-- Nadpis sekce -->
           <div class="section-title-row">
             <div>
-              <p class="eyebrow">OBLÍBENÉ VOLBY</p>
-              <h2>Poznejte jazyky</h2>
+              <p class="eyebrow">OBORY PROGRAMOVÁNÍ</p>
+              <h2>Co chceš tvořit?</h2>
             </div>
             <p class="small-text">
-              Rychlý úvod do čtyř jazyků, které by měl znát každý začátečník.
+              Rozbal téma a poznej používané jazyky i krátkou ukázku kódu. Více
+              témat může zůstat otevřených zároveň.
             </p>
           </div>
 
-          <!-- Karty jednotlivých jazyků -->
-          <div class="language-grid">
-            <article class="language-card python">
-              <div class="language-icon">Py</div>
-              <h3>Python</h3>
-              <p>
-                Jasný, čitelný a všestranný jazyk. Oblíbený pro začátečníky,
-                datovou vědu a automatizaci.
-              </p>
-              <span>Data a AI</span>
-            </article>
-            <article class="language-card javascript">
-              <div class="language-icon">JS</div>
-              <h3>JavaScript</h3>
-              <p>
-                Jazyk webu. Oživuje webové stránky a funguje také na serverech.
-              </p>
-              <span>Vývoj webů</span>
-            </article>
-            <article class="language-card java">
-              <div class="language-icon">Ja</div>
-              <h3>Java</h3>
-              <p>
-                Spolehlivý objektově orientovaný jazyk pro velké aplikace a
-                Android.
-              </p>
-              <span>Aplikace a firmy</span>
-            </article>
-            <article class="language-card cpp">
-              <div class="language-icon">C++</div>
-              <h3>C++</h3>
-              <p>
-                Rychlý a výkonný jazyk. Často se používá pro hry, grafiku a
-                výkonný software.
-              </p>
-              <span>Hry a systémy</span>
-            </article>
+          <!-- Každé details je samostatné téma. Summary funguje i klávesnicí. -->
+          <div class="topic-list">
+            <!-- Vývoj her -->
+            <details class="topic">
+              <summary>
+                <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+                <span>Vývoj her</span>
+              </summary>
+              <div class="topic-content">
+                <!-- Loga jsou místní SVG; prázdný alt neopakuje vedlejší název jazyka. -->
+                <ul class="language-logos" aria-label="Používané jazyky">
+                  <li>
+                    <img
+                      src="assets/logos/csharp.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>C#</span>
+                  </li>
+                  <li>
+                    <img
+                      src="assets/logos/cplusplus.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>C++</span>
+                  </li>
+                  <li>
+                    <img
+                      src="assets/logos/godot.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>GDScript (Godot)</span>
+                  </li>
+                </ul>
+                <p>
+                  Herní programování řeší pohyb postav, pravidla hry, grafiku i
+                  zvuk. C# se používá v Unity, C++ v Unreal Engine a GDScript v
+                  Godotu.
+                </p>
+                <!-- Doplnění popisu, příklady využití a první malý projekt. -->
+                <p>
+                  Hra obvykle běží ve smyčce: načte vstupy hráče, aktualizuje
+                  herní svět a vykreslí nový snímek. Programátor propojuje
+                  pravidla se scénami, animacemi a fyzikou. Herní engine
+                  poskytuje hotové nástroje, ale chování hry je potřeba
+                  naprogramovat.
+                </p>
+                <div class="topic-guide">
+                  <div>
+                    <h3>Kde se používá</h3>
+                    <ul>
+                      <li>2D plošinovky, logické hry a mobilní hry</li>
+                      <li>
+                        3D světy, simulace a hry pro počítače nebo konzole
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3>Jak začít</h3>
+                    <p>
+                      Začni malou 2D hrou: pohyb postavy, sbírání mincí a
+                      počítadlo skóre. Nejdřív dokonči jednu jednoduchou herní
+                      mechaniku.
+                    </p>
+                  </div>
+                </div>
+                <!-- Ukázka je pouze text; barevné span prvky ji nespouští. -->
+                <h3>C# – jednoduchá změna skóre</h3>
+                <p class="code-note">
+                  Základní konzolová ukázka; skutečný herní projekt navíc
+                  používá herní engine.
+                </p>
+                <pre
+                  tabindex="0"
+                  aria-label="Ukázka kódu, lze posouvat do strany"
+                ><code><span class="token-keyword">int</span> skore = <span class="token-number">0</span>;
+<span class="token-keyword">int</span> bodyZaMinci = <span class="token-number">10</span>;
+skore += bodyZaMinci;
+System.Console.<span class="token-function">WriteLine</span>(<span class="token-string">$"Skóre: {skore}"</span>);</code></pre>
+                <p class="code-explanation">
+                  <strong>Co kód dělá:</strong> Proměnná skore začíná na nule.
+                  Operátor += přičte body za minci a poslední řádek vypíše nový
+                  výsledek.
+                </p>
+              </div>
+            </details>
+
+            <!-- Umělá inteligence (AI) -->
+            <details class="topic">
+              <summary>
+                <i class="fa-solid fa-robot" aria-hidden="true"></i>
+                <span>Umělá inteligence (AI)</span>
+              </summary>
+              <div class="topic-content">
+                <!-- Loga jsou místní SVG; prázdný alt neopakuje vedlejší název jazyka. -->
+                <ul class="language-logos" aria-label="Používané jazyky">
+                  <li>
+                    <img
+                      src="assets/logos/python.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>Python</span>
+                  </li>
+                  <li>
+                    <img
+                      src="assets/logos/cplusplus.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>C++</span>
+                  </li>
+                  <li>
+                    <img
+                      src="assets/logos/javascript.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>JavaScript</span>
+                  </li>
+                </ul>
+                <p>
+                  AI je širší oblast vytváření systémů, které například
+                  rozpoznávají obraz, pracují s textem nebo plánují. Python
+                  slouží často k vývoji modelů, C++ k rychlému zpracování a
+                  JavaScript k jejich použití ve webu.
+                </p>
+                <!-- Doplnění popisu, příklady využití a první malý projekt. -->
+                <p>
+                  Pod AI patří několik přístupů, například systémy pravidel,
+                  vyhledávání řešení nebo modely naučené z dat. Vývojář
+                  připravuje vstupy a propojuje výstup modelu s aplikací.
+                  Výsledek je potřeba ověřovat, protože ani složitý model nemusí
+                  vždy odpovědět správně.
+                </p>
+                <div class="topic-guide">
+                  <div>
+                    <h3>Kde se používá</h3>
+                    <ul>
+                      <li>Chatboti a pomocníci pro práci s textem</li>
+                      <li>
+                        Rozpoznávání obrázků, doporučování obsahu a plánování
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3>Jak začít</h3>
+                    <p>
+                      Vyzkoušej jednoduchého pomocníka s několika předem
+                      připravenými odpověďmi. Potom můžeš zkoumat, jak se liší
+                      pravidla od modelu naučeného na datech.
+                    </p>
+                  </div>
+                </div>
+                <!-- Ukázka je pouze text; barevné span prvky ji nespouští. -->
+                <h3>Python – odpověď podle pravidel</h3>
+                <p class="code-note">
+                  Jde o jednoduchý systém pravidel, nikoli o naučený model nebo
+                  generativní AI.
+                </p>
+                <pre
+                  tabindex="0"
+                  aria-label="Ukázka kódu, lze posouvat do strany"
+                ><code>odpovedi = {<span class="token-string">"ahoj"</span>: <span class="token-string">"Ahoj! Jak ti můžu pomoct?"</span>}
+zprava = <span class="token-string">"Ahoj"</span>
+odpoved = odpovedi.<span class="token-function">get</span>(zprava.<span class="token-function">lower</span>(), <span class="token-string">"Zkus napsat ahoj."</span>)
+<span class="token-function">print</span>(odpoved)</code></pre>
+                <p class="code-explanation">
+                  <strong>Co kód dělá:</strong> Slovník obsahuje známé otázky a
+                  odpovědi. lower() převede vstup na malá písmena a get() vrátí
+                  odpověď nebo náhradní text.
+                </p>
+              </div>
+            </details>
+
+            <!-- Strojové učení -->
+            <details class="topic">
+              <summary>
+                <i class="fa-solid fa-brain" aria-hidden="true"></i>
+                <span>Strojové učení</span>
+              </summary>
+              <div class="topic-content">
+                <!-- Loga jsou místní SVG; prázdný alt neopakuje vedlejší název jazyka. -->
+                <ul class="language-logos" aria-label="Používané jazyky">
+                  <li>
+                    <img
+                      src="assets/logos/python.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>Python</span>
+                  </li>
+                  <li>
+                    <img
+                      src="assets/logos/r.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>R</span>
+                  </li>
+                  <li>
+                    <img
+                      src="assets/logos/julia.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>Julia</span>
+                  </li>
+                </ul>
+                <p>
+                  Strojové učení je součást AI. Model hledá vztahy v datech
+                  místo toho, aby měl všechna pravidla napsaná ručně. Python
+                  nabízí mnoho knihoven, R je oblíbený pro statistiku a Julia
+                  pro numerické výpočty.
+                </p>
+                <!-- Doplnění popisu, příklady využití a první malý projekt. -->
+                <p>
+                  Typický postup začíná sběrem a čištěním dat. Část dat se
+                  použije pro učení a jiná část pro ověření, jak si model poradí
+                  s novými příklady. Model může předpovídat číslo, přiřazovat
+                  kategorii nebo hledat podobné skupiny. Kvalita dat ovlivňuje
+                  výsledek stejně jako zvolený algoritmus.
+                </p>
+                <div class="topic-guide">
+                  <div>
+                    <h3>Kde se používá</h3>
+                    <ul>
+                      <li>Odhad ceny nebo budoucí poptávky</li>
+                      <li>Rozpoznání spamu a třídění dat do kategorií</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3>Jak začít</h3>
+                    <p>
+                      Začni malou tabulkou a předpovědí jedné číselné hodnoty.
+                      Zkus změnit vstupní data a sleduj, jak se mění výsledek.
+                    </p>
+                  </div>
+                </div>
+                <!-- Ukázka je pouze text; barevné span prvky ji nespouští. -->
+                <h3>Python – naučení jednoduchého lineárního vztahu</h3>
+                <p class="code-note">
+                  Z dvojic čísel odhadneme násobek, který převádí vstup na
+                  výstup. Ukázka používá jen základní Python.
+                </p>
+                <pre
+                  tabindex="0"
+                  aria-label="Ukázka kódu, lze posouvat do strany"
+                ><code>vstupy = [<span class="token-number">1</span>, <span class="token-number">2</span>, <span class="token-number">3</span>]
+vystupy = [<span class="token-number">2</span>, <span class="token-number">4</span>, <span class="token-number">6</span>]
+vaha = <span class="token-function">sum</span>(x * y <span class="token-keyword">for</span> x, y <span class="token-keyword">in</span> <span class="token-function">zip</span>(vstupy, vystupy)) / <span class="token-function">sum</span>(x * x <span class="token-keyword">for</span> x <span class="token-keyword">in</span> vstupy)
+predikce = vaha * <span class="token-number">4</span>
+<span class="token-function">print</span>(predikce)  <span class="token-comment"># 8.0</span></code></pre>
+                <p class="code-explanation">
+                  <strong>Co kód dělá:</strong> Ukázka hledá váhu pro vztah y =
+                  váha × x bez konstantního členu. Z dat vyjde váha 2, takže pro
+                  vstup 4 předpoví 8. Skutečné modely je nutné ověřit na dalších
+                  datech.
+                </p>
+              </div>
+            </details>
+
+            <!-- Vývoj webů -->
+            <details class="topic">
+              <summary>
+                <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                <span>Vývoj webů</span>
+              </summary>
+              <div class="topic-content">
+                <!-- Loga jsou místní SVG; prázdný alt neopakuje vedlejší název jazyka. -->
+                <ul class="language-logos" aria-label="Používané jazyky">
+                  <li>
+                    <img
+                      src="assets/logos/javascript.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>JavaScript</span>
+                  </li>
+                  <li>
+                    <img
+                      src="assets/logos/typescript.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>TypeScript</span>
+                  </li>
+                  <li>
+                    <img
+                      src="assets/logos/php.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>PHP</span>
+                  </li>
+                  <li>
+                    <img
+                      src="assets/logos/python.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>Python</span>
+                  </li>
+                </ul>
+                <p>
+                  JavaScript a TypeScript řídí chování webu. PHP nebo Python
+                  mohou zpracovávat požadavky na serveru. HTML vytváří strukturu
+                  a CSS vzhled; nejsou to programovací jazyky.
+                </p>
+                <!-- Doplnění popisu, příklady využití a první malý projekt. -->
+                <p>
+                  Frontend je část webu, kterou uživatel vidí v prohlížeči.
+                  Backend na serveru řeší například přihlášení, ukládání dat
+                  nebo odpovědi na požadavky. TypeScript rozšiřuje JavaScript o
+                  typy a před spuštěním se převádí na JavaScript. U webu je
+                  důležitá také přístupnost, bezpečnost a mobilní rozložení.
+                </p>
+                <div class="topic-guide">
+                  <div>
+                    <h3>Kde se používá</h3>
+                    <ul>
+                      <li>Prezentační weby, e-shopy a blogy</li>
+                      <li>
+                        Webové aplikace, formuláře a administrační rozhraní
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3>Jak začít</h3>
+                    <p>
+                      Nejdřív vytvoř stránku v HTML a CSS. Potom přidej jednu
+                      interakci v JavaScriptu, například tlačítko měnící text.
+                    </p>
+                  </div>
+                </div>
+                <!-- Ukázka je pouze text; barevné span prvky ji nespouští. -->
+                <h3>JavaScript – reakce na kliknutí</h3>
+                <p class="code-note">
+                  Ukázka kombinuje HTML a JavaScript. Na tomto webu se zobrazuje
+                  jen jako text a nespouští se.
+                </p>
+                <pre
+                  tabindex="0"
+                  aria-label="Ukázka kódu, lze posouvat do strany"
+                ><code>&lt;button id=<span class="token-string">"pozdrav"</span>&gt;Pozdravit&lt;/button&gt;
+&lt;script&gt;
+  document.<span class="token-function">querySelector</span>(<span class="token-string">"#pozdrav"</span>).<span class="token-function">addEventListener</span>(<span class="token-string">"click"</span>, () =&gt; {
+    <span class="token-function">alert</span>(<span class="token-string">"Ahoj, světe!"</span>);
+  });
+&lt;/script&gt;</code></pre>
+                <p class="code-explanation">
+                  <strong>Co kód dělá:</strong> querySelector() vybere tlačítko
+                  podle id. addEventListener() zaregistruje reakci na kliknutí a
+                  alert() zobrazí zprávu.
+                </p>
+              </div>
+            </details>
+
+            <!-- Mobilní aplikace -->
+            <details class="topic">
+              <summary>
+                <i
+                  class="fa-solid fa-mobile-screen-button"
+                  aria-hidden="true"
+                ></i>
+                <span>Mobilní aplikace</span>
+              </summary>
+              <div class="topic-content">
+                <!-- Loga jsou místní SVG; prázdný alt neopakuje vedlejší název jazyka. -->
+                <ul class="language-logos" aria-label="Používané jazyky">
+                  <li>
+                    <img
+                      src="assets/logos/kotlin.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>Kotlin</span>
+                  </li>
+                  <li>
+                    <img
+                      src="assets/logos/swift.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>Swift</span>
+                  </li>
+                  <li>
+                    <img
+                      src="assets/logos/dart.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>Dart</span>
+                  </li>
+                </ul>
+                <p>
+                  Kotlin se používá pro Android, Swift pro iOS a Dart s
+                  Flutterem umožňuje vytvářet aplikace pro více platforem. Vývoj
+                  zahrnuje obrazovky, ovládání i práci s daty.
+                </p>
+                <!-- Doplnění popisu, příklady využití a první malý projekt. -->
+                <p>
+                  Aplikace musí reagovat na dotyk, různé velikosti obrazovek i
+                  změny připojení. Často využívá funkce telefonu, například
+                  fotoaparát nebo oznámení. Nativní vývoj cílí přímo na danou
+                  platformu; multiplatformní nástroje umožňují sdílet část kódu
+                  mezi Androidem a iOS.
+                </p>
+                <div class="topic-guide">
+                  <div>
+                    <h3>Kde se používá</h3>
+                    <ul>
+                      <li>Seznamy úkolů, poznámky a kalendáře</li>
+                      <li>
+                        Mapy, komunikace a aplikace pracující s fotoaparátem
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3>Jak začít</h3>
+                    <p>
+                      Vytvoř jednu obrazovku s tlačítkem a počítadlem. Postupně
+                      přidej uložení hodnoty a přechod na další obrazovku.
+                    </p>
+                  </div>
+                </div>
+                <!-- Ukázka je pouze text; barevné span prvky ji nespouští. -->
+                <h3>Kotlin – text zobrazený v konzoli</h3>
+                <p class="code-note">
+                  Základní funkce Kotlinu. Pro obrazovku aplikace by bylo
+                  potřeba také rozhraní Androidu.
+                </p>
+                <pre
+                  tabindex="0"
+                  aria-label="Ukázka kódu, lze posouvat do strany"
+                ><code><span class="token-keyword">fun</span> <span class="token-function">main</span>() {
+    <span class="token-keyword">val</span> uzivatel = <span class="token-string">"Vít"</span>
+    <span class="token-function">println</span>(<span class="token-string">"Vítej v aplikaci, $uzivatel!"</span>)
+}</code></pre>
+                <p class="code-explanation">
+                  <strong>Co kód dělá:</strong> fun označuje funkci. val vytvoří
+                  hodnotu, která se znovu nepřiřazuje, a $uzivatel vloží její
+                  obsah do textu.
+                </p>
+              </div>
+            </details>
+
+            <!-- Data a databáze -->
+            <details class="topic">
+              <summary>
+                <i class="fa-solid fa-chart-column" aria-hidden="true"></i>
+                <span>Data a databáze</span>
+              </summary>
+              <div class="topic-content">
+                <!-- Loga jsou místní SVG; prázdný alt neopakuje vedlejší název jazyka. -->
+                <ul class="language-logos" aria-label="Používané jazyky">
+                  <li>
+                    <img
+                      src="assets/logos/sqlite.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>SQL (SQLite)</span>
+                  </li>
+                  <li>
+                    <img
+                      src="assets/logos/python.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>Python</span>
+                  </li>
+                  <li>
+                    <img
+                      src="assets/logos/r.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>R</span>
+                  </li>
+                </ul>
+                <p>
+                  SQL slouží k dotazování nad relačními databázemi. Python a R
+                  pomáhají data čistit, analyzovat a zobrazovat v grafech.
+                </p>
+                <!-- Doplnění popisu, příklady využití a první malý projekt. -->
+                <p>
+                  Relační databáze ukládá data do tabulek propojených klíči.
+                  Dotazy vybírají, filtrují a spojují záznamy. Datová analýza
+                  navazuje výpočty a grafy, které pomáhají hledat souvislosti.
+                  SQLite je příklad databáze používající SQL, nikoli název
+                  samostatného programovacího jazyka.
+                </p>
+                <div class="topic-guide">
+                  <div>
+                    <h3>Kde se používá</h3>
+                    <ul>
+                      <li>Ukládání uživatelů, objednávek a výsledků</li>
+                      <li>Přehledy, statistiky a vizualizace dat</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3>Jak začít</h3>
+                    <p>
+                      Navrhni tabulku výsledků a několik záznamů. Vyzkoušej
+                      jejich výběr, seřazení a výpočet průměru.
+                    </p>
+                  </div>
+                </div>
+                <!-- Ukázka je pouze text; barevné span prvky ji nespouští. -->
+                <h3>SQL – výběr nejlepších výsledků</h3>
+                <p class="code-note">
+                  Dotaz předpokládá existující tabulku vysledky se sloupci jmeno
+                  a body.
+                </p>
+                <pre
+                  tabindex="0"
+                  aria-label="Ukázka kódu, lze posouvat do strany"
+                ><code><span class="token-keyword">SELECT</span> jmeno, body
+<span class="token-keyword">FROM</span> vysledky
+<span class="token-keyword">WHERE</span> body &gt;= <span class="token-number">80</span>
+<span class="token-keyword">ORDER</span> <span class="token-keyword">BY</span> body <span class="token-keyword">DESC</span>;</code></pre>
+                <p class="code-explanation">
+                  <strong>Co kód dělá:</strong> SELECT určuje sloupce, FROM
+                  tabulku a WHERE filtr. ORDER BY seřadí výsledek; DESC znamená
+                  sestupně.
+                </p>
+              </div>
+            </details>
+
+            <!-- Automatizace a skripty -->
+            <details class="topic">
+              <summary>
+                <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                <span>Automatizace a skripty</span>
+              </summary>
+              <div class="topic-content">
+                <!-- Loga jsou místní SVG; prázdný alt neopakuje vedlejší název jazyka. -->
+                <ul class="language-logos" aria-label="Používané jazyky">
+                  <li>
+                    <img
+                      src="assets/logos/python.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>Python</span>
+                  </li>
+                  <li>
+                    <img
+                      src="assets/logos/bash.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>Bash</span>
+                  </li>
+                  <li>
+                    <img
+                      src="assets/logos/powershell.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>PowerShell</span>
+                  </li>
+                </ul>
+                <p>
+                  Skripty zjednodušují opakované úkoly, například práci se
+                  soubory, zpracování textu nebo správu počítače. Python funguje
+                  napříč systémy, Bash je běžný v Linuxu a PowerShell ve
+                  Windows.
+                </p>
+                <!-- Doplnění popisu, příklady využití a první malý projekt. -->
+                <p>
+                  Automatizace propojuje malé kroky do opakovatelného postupu.
+                  Skript může zpracovat mnoho souborů nebo pravidelně připravit
+                  přehled. Při práci je potřeba počítat s chybějícími soubory a
+                  jinými chybami. Operace měnící data je vhodné nejdřív zkoušet
+                  na kopiích.
+                </p>
+                <div class="topic-guide">
+                  <div>
+                    <h3>Kde se používá</h3>
+                    <ul>
+                      <li>Hromadné zpracování souborů a generování reportů</li>
+                      <li>Kontrola záloh a správa vývojového prostředí</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3>Jak začít</h3>
+                    <p>
+                      Napiš skript, který pouze vypíše plánované názvy souborů.
+                      Až rozumíš výsledku, přidej skutečnou práci se soubory.
+                    </p>
+                  </div>
+                </div>
+                <!-- Ukázka je pouze text; barevné span prvky ji nespouští. -->
+                <h3>Python – vytvoření jednoduchých názvů souborů</h3>
+                <p class="code-note">
+                  Ukázka pouze vypisuje názvy; žádné soubory nevytváří ani
+                  nemění.
+                </p>
+                <pre
+                  tabindex="0"
+                  aria-label="Ukázka kódu, lze posouvat do strany"
+                ><code><span class="token-keyword">for</span> cislo <span class="token-keyword">in</span> <span class="token-function">range</span>(<span class="token-number">1</span>, <span class="token-number">4</span>):
+    nazev = <span class="token-string">f"report-{cislo}.txt"</span>
+    <span class="token-function">print</span>(nazev)</code></pre>
+                <p class="code-explanation">
+                  <strong>Co kód dělá:</strong> range(1, 4) vytvoří čísla 1, 2 a
+                  3. Cyklus sestaví pro každé číslo název a print() ho vypíše.
+                </p>
+              </div>
+            </details>
+
+            <!-- Systémy a vestavěná zařízení -->
+            <details class="topic">
+              <summary>
+                <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+                <span>Systémy a vestavěná zařízení</span>
+              </summary>
+              <div class="topic-content">
+                <!-- Loga jsou místní SVG; prázdný alt neopakuje vedlejší název jazyka. -->
+                <ul class="language-logos" aria-label="Používané jazyky">
+                  <li>
+                    <img
+                      src="assets/logos/c.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>C</span>
+                  </li>
+                  <li>
+                    <img
+                      src="assets/logos/cplusplus.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>C++</span>
+                  </li>
+                  <li>
+                    <img
+                      src="assets/logos/rust.svg"
+                      alt=""
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                    /><span>Rust</span>
+                  </li>
+                </ul>
+                <p>
+                  Tyto jazyky se používají pro části operačních systémů,
+                  ovladače a programy pro malá zařízení. Důležitý je výkon a
+                  práce s pamětí; Rust navíc pomáhá předcházet řadě chyb při
+                  její správě.
+                </p>
+                <!-- Doplnění popisu, příklady využití a první malý projekt. -->
+                <p>
+                  Vestavěný program může běžet na mikrokontroléru s omezenou
+                  pamětí. Čte senzory a řídí například motor nebo chlazení.
+                  Systémové programování pracuje blízko hardwaru a vyžaduje
+                  přesnou správu zdrojů. Podpora konkrétního jazyka závisí také
+                  na zařízení a dostupných nástrojích.
+                </p>
+                <div class="topic-guide">
+                  <div>
+                    <h3>Kde se používá</h3>
+                    <ul>
+                      <li>Senzory, chytrá zařízení a řízení strojů</li>
+                      <li>Ovladače a výkonné systémové nástroje</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3>Jak začít</h3>
+                    <p>
+                      Začni čtením simulované hodnoty senzoru a rozhodnutím
+                      podle limitu. Na skutečné zařízení přejdi až po zvládnutí
+                      základů.
+                    </p>
+                  </div>
+                </div>
+                <!-- Ukázka je pouze text; barevné span prvky ji nespouští. -->
+                <h3>C – vyhodnocení naměřené teploty</h3>
+                <p class="code-note">
+                  Teplota je zde zadaná ručně. Na zařízení by ji program načetl
+                  ze senzoru.
+                </p>
+                <pre
+                  tabindex="0"
+                  aria-label="Ukázka kódu, lze posouvat do strany"
+                ><code><span class="token-keyword">#include &lt;stdio.h&gt;</span>
+
+<span class="token-keyword">int</span> <span class="token-function">main</span>(void) {
+    <span class="token-keyword">int</span> teplota = <span class="token-number">28</span>;
+    <span class="token-keyword">if</span> (teplota &gt; <span class="token-number">25</span>) {
+        <span class="token-function">puts</span>(<span class="token-string">"Zapnout chlazení"</span>);
+    }
+    <span class="token-keyword">return</span> <span class="token-number">0</span>;
+}</code></pre>
+                <p class="code-explanation">
+                  <strong>Co kód dělá:</strong> Podmínka if porovná teplotu s
+                  limitem. puts() vypíše zprávu, pokud je limit překročen;
+                  return 0 ukončí program úspěšně.
+                </p>
+              </div>
+            </details>
           </div>
         </div>
       </section>
@@ -126,18 +822,28 @@
         <p>
           Bylo použito AI |
           <span id="ai"
-            ><a href="https://chatgpt.com/s/cx_6ab3b6325748819197e55acb0b606f9b"
-              >Codex 5.6 Terra</a
+            ><a href="https://chatgpt.com/s/cx_6acde90a4fb8819187bdd8f504cd3c0d"
+              >GPT-Sol 6.1</a
             ></span
           >
         </p>
         <!-- Odkazy spustí kontrolu publikované stránky ve validátorech W3C. -->
         <div class="validation-links" aria-label="Validace stránky">
-          <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fvitekcharvat.github.io%2Fweb-coding-languages%2F" target="_blank" rel="noopener noreferrer" title="Zkontrolovat HTML ve validátoru W3C">
+          <a
+            href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fvitekcharvat.github.io%2Fweb-coding-languages%2F"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Zkontrolovat HTML ve validátoru W3C"
+          >
             <i class="fa-brands fa-html5" aria-hidden="true"></i>
             <span>Validace HTML</span>
           </a>
-          <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvitekcharvat.github.io%2Fweb-coding-languages%2Fstyle.css" target="_blank" rel="noopener noreferrer" title="Zkontrolovat CSS ve validátoru W3C">
+          <a
+            href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvitekcharvat.github.io%2Fweb-coding-languages%2Fstyle.css"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Zkontrolovat CSS ve validátoru W3C"
+          >
             <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
             <span>Validace CSS</span>
           </a>

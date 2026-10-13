@@ -12,9 +12,12 @@
   --yellow: #f4b544;
   --orange: #b96b20;
   --python: #3776ab;
-  --javascript: #f0cf4e;
-  --java: #cf6154;
-  --cpp: #5e75ad;
+  /* Barvy různých částí kódu na tmavém pozadí. */
+  --code-keyword: #c5a5ff;
+  --code-string: #a8dfaa;
+  --code-number: #ffd180;
+  --code-function: #82d5ee;
+  --code-comment: #a7b9c3;
   --body-font: "DM Sans", sans-serif;
   --title-font: "Space Grotesk", sans-serif;
 }
@@ -176,7 +179,7 @@ a:focus-visible {
   color: var(--muted-text);
 }
 
-/* Karty programovacích jazyků */
+/* Přehled oborů programování */
 .languages {
   padding: 65px 0;
   background: var(--surface);
@@ -186,55 +189,169 @@ a:focus-visible {
   margin-bottom: 35px;
 }
 
-.language-grid {
+/* Rozbalovací témata jsou pod sebou, aby byl otevřený obsah přehledný. */
+.topic-list {
   display: grid;
-  /* Čtyři stejné sloupce. 1fr znamená jeden díl dostupné šířky.
-     minmax(0, 1fr) dovolí sloupci zúžit se i při delším obsahu. */
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  gap: 16px;
 }
 
-.language-card {
-  padding: 22px;
+.topic {
   background: var(--light);
-  border-top: 4px solid;
+  border: 1px solid #cbd7d2;
+  border-left: 4px solid var(--yellow);
 }
 
-.language-icon {
-  display: grid;
-  /* V gridu zarovná obsah vodorovně i svisle na střed. */
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  margin-bottom: 25px;
-  color: white;
-  border-radius: 3px;
+/* summary je klikací nadpis prvku details.
+   Prohlížeč sám zajistí kliknutí, klávesnici a informaci o otevření. */
+.topic summary {
+  padding: 20px;
+  cursor: pointer;
+  color: var(--dark);
+  font-family: var(--title-font);
+  font-size: 1rem;
   font-weight: bold;
 }
 
-.language-card h3 {
-  margin-bottom: 10px;
+/* Ponecháváme nativní trojúhelník ukazující stav rozbalení. */
+.topic summary::marker {
+  color: var(--orange);
+}
+
+.topic summary i {
+  margin: 0 10px;
+  color: var(--orange);
+}
+
+.topic summary:hover {
+  background: var(--surface);
+}
+
+.topic summary:focus-visible {
+  outline: 3px solid var(--python);
+  outline-offset: 2px;
+}
+
+/* Atribut open přidává prohlížeč, když uživatel téma rozbalí. */
+.topic[open] summary {
+  border-bottom: 1px solid #cbd7d2;
+}
+
+.topic-content {
+  padding: 25px;
+  /* Dlouhá slova se mohou zalomit, aby nepřetékala na mobilu. */
+  overflow-wrap: anywhere;
+}
+
+.topic-content p {
+  max-width: 850px;
+  color: var(--muted-text);
+}
+
+/* Loga a názvy zůstávají vedle sebe; flex-wrap zalomí celý štítek. */
+.language-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 25px;
+  padding: 0;
+  list-style: none;
+}
+
+.language-logos li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  color: var(--dark);
+  background: var(--surface);
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.language-logos img {
+  /* SVG se vejde do stejného prostoru bez změny poměru stran. */
+  object-fit: contain;
+  width: 32px;
+  height: 32px;
+}
+
+/* Dva stejné sloupce pro použití oboru a doporučený začátek.
+   minmax(0, 1fr) zabrání roztahování sloupce dlouhým obsahem. */
+.topic-guide {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  margin: 25px 0;
+  padding: 20px;
+  background: var(--surface);
+  border-left: 3px solid var(--python);
+}
+
+.topic-guide h3 {
+  margin-top: 0;
+}
+
+.topic-guide p, .topic-guide ul {
+  margin-bottom: 0;
+}
+
+.topic-guide ul {
+  padding-left: 20px;
+  color: var(--muted-text);
+}
+
+.topic-guide li + li {
+  /* + vybírá položku, které bezprostředně předchází jiná položka. */
+  margin-top: 8px;
+}
+
+.topic-content h3 {
+  margin: 25px 0 10px;
   font-size: 1rem;
 }
 
-.language-card p {
-  color: var(--muted-text);
+.code-note {
+  margin-bottom: 15px;
 }
 
-.language-card span {
-  color: var(--muted-text);
-  font-weight: bold;
+pre {
+  max-width: 100%;
+  margin: 0;
+  padding: 20px;
+  color: var(--light);
+  background: var(--dark);
+  border-radius: 3px;
+  /* Dlouhý kód se posouvá uvnitř bloku, neroztáhne celou stránku. */
+  overflow-x: auto;
 }
 
-/* Každá karta má vlastní barvu horního okraje a ikony. */
-.python { border-color: var(--python); }
-.python .language-icon { background: var(--python); }
-.javascript { border-color: var(--javascript); }
-.javascript .language-icon { color: var(--dark); background: var(--javascript); }
-.java { border-color: var(--java); }
-.java .language-icon { background: var(--java); }
-.cpp { border-color: var(--cpp); }
-.cpp .language-icon { background: var(--cpp); }
+code {
+  font-family: Consolas, monospace;
+  font-size: 1rem;
+}
+
+/* pre zachová řádky a odsazení příkladu kódu. */
+pre code {
+  white-space: pre;
+}
+
+/* Span obaluje část ukázky a CSS jí pouze přidá barvu.
+   Zvýraznění je ručně uložené v HTML, nepotřebuje JavaScript. */
+.token-keyword { color: var(--code-keyword); }
+.token-string { color: var(--code-string); }
+.token-number { color: var(--code-number); }
+.token-function { color: var(--code-function); }
+.token-comment { color: var(--code-comment); font-style: italic; }
+
+pre:focus-visible {
+  /* Focus zvýrazní blok, aby ho šlo posouvat také klávesnicí. */
+  outline: 3px solid var(--python);
+  outline-offset: 3px;
+}
+
+.code-explanation {
+  margin: 18px 0 0;
+}
 
 /* Zápatí a odkazy na validátory */
 footer {
@@ -303,12 +420,13 @@ footer a:hover {
     display: block;
   }
 
-  .language-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .topic-guide {
+    grid-template-columns: 1fr;
   }
+
 }
 
-/* Na telefonu se karty i obsah zápatí seskládají pod sebe. */
+/* Na telefonu zmenšíme vnitřní mezery a seskládáme zápatí. */
 @media (max-width: 500px) {
   .navbar {
     min-height: 65px;
@@ -323,8 +441,16 @@ footer a:hover {
   .about { padding: 45px 0; }
   .languages { padding: 45px 0; }
 
-  .language-grid {
-    grid-template-columns: 1fr;
+  .topic-content {
+    padding: 16px;
+  }
+
+  .topic summary {
+    padding: 16px;
+  }
+
+  pre {
+    padding: 16px;
   }
 
   .footer-content {
