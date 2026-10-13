@@ -1,23 +1,28 @@
+/* Fonty se načtou z Google Fonts. @import musí být před ostatními pravidly. */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap");
 
-/* Barvy a fonty */
+/* Proměnné: var() níže použije hodnotu uloženou zde. */
 :root {
   --dark: #152c3b;
   --light: #fffdf9;
+  --surface: #edf2f0;
   --text: #1d2733;
   --muted-text: #66727a;
-  --border: #dce2df;
+  --light-text: #c5d1d4;
+  --yellow: #f4b544;
+  --orange: #b96b20;
+  --python: #3776ab;
+  --javascript: #f0cf4e;
+  --java: #cf6154;
+  --cpp: #5e75ad;
   --body-font: "DM Sans", sans-serif;
   --title-font: "Space Grotesk", sans-serif;
 }
 
 /* Základ stránky */
 * {
+  /* Padding a okraj se započítají do nastavené šířky prvku. */
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -25,56 +30,75 @@ body {
   color: var(--text);
   background: var(--light);
   font-family: var(--body-font);
+  line-height: 1.6;
 }
 
-h1,
-h2,
-h3,
-p {
+h1, h2, h3, p {
   margin-top: 0;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: var(--title-font);
+  line-height: 1.1;
 }
 
+h1 {
+  margin-bottom: 25px;
+  font-size: 5rem;
+  letter-spacing: -2px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 3rem;
+  letter-spacing: -1px;
+}
+
+/* Obsah je vycentrovaný; na široké obrazovce nepřesáhne 1120 px. */
 .container {
   width: 90%;
   max-width: 1120px;
-  margin: auto;
+  margin: 0 auto;
+}
+
+/* Klávesnice: viditelné označení právě vybraného odkazu. */
+a:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 4px;
 }
 
 /* Navigace a úvod */
 .hero {
-  padding-bottom: 55px;
-  color: var(--text);
-  background: var(--light);
-  border-bottom: 1px solid var(--border);
+  padding-bottom: 60px;
+  color: var(--light);
+  background: var(--dark);
 }
 
 .navbar {
+  /* Flexbox umístí logo a menu vedle sebe na opačné konce řádku. */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 78px;
-  border-bottom: 1px solid var(--border);
+  min-height: 78px;
+  border-bottom: 1px solid #294554;
 }
 
 .logo {
-  color: var(--dark);
-  font: bolder 1rem var(--title-font);
+  color: var(--light);
+  font-family: var(--title-font);
+  font-size: 2rem;
+  font-weight: bold;
   text-decoration: none;
 }
 
-.logo span {
-  color: var(--dark);
+.logo span, h1 span {
+  color: var(--yellow);
 }
 
 .nav-links {
   display: flex;
   gap: 25px;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -83,90 +107,79 @@ h3 {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--dark);
-  font-size: 1rem;
+  padding: 10px;
+  color: var(--light);
   text-decoration: none;
-  padding: 8px;
 }
 
 .nav-links a:hover {
-  color: var(--light);
-  background-color: var(--dark);
-  border-radius: 15px;
+  color: var(--yellow);
 }
 
 .hero-content {
-  display: flex;
-  align-items: center;
-  min-height: 380px;
+  padding-top: 55px;
 }
 
 .hero-text {
-  max-width: 550px;
+  max-width: 650px;
+}
+
+.school-notice {
+  margin-bottom: 30px;
+  color: var(--light-text);
+  font-size: 1rem;
 }
 
 .eyebrow {
   margin-bottom: 15px;
-  color: var(--muted-text);
+  color: var(--orange);
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 2px;
 }
 
-h1 {
-  margin-bottom: 25px;
-  font-size: 5rem;
-  line-height: 1;
+.hero .eyebrow {
+  color: var(--yellow);
 }
 
 .intro {
-  max-width: 465px;
+  max-width: 580px;
   margin-bottom: 30px;
-  color: var(--muted-text);
-  line-height: 1.7;
+  color: var(--light-text);
 }
 
 .button {
   display: inline-block;
-  padding: 13px 20px;
-  color: var(--light);
-  background: var(--dark);
-  border-radius: 2px;
+  padding: 13px 22px;
+  color: var(--dark);
+  background: var(--yellow);
+  border-radius: 3px;
   font-weight: bold;
   text-decoration: none;
 }
 
-/* Sekce o tématu */
+/* Vysvětlení tématu */
 .about {
   padding: 75px 0;
 }
 
-.section-heading,
-.section-title-row {
+.section-heading, .section-title-row {
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: space-between;
   gap: 40px;
 }
 
-h2 {
-  font-size: 3rem;
-  line-height: 1.1;
-}
-
-.section-heading p,
-.small-text {
+.section-heading p, .small-text {
   max-width: 410px;
+  margin-bottom: 0;
   color: var(--muted-text);
-  line-height: 1.7;
 }
 
-/* Karty jazyků */
+/* Karty programovacích jazyků */
 .languages {
   padding: 65px 0;
-  background: var(--light);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  background: var(--surface);
 }
 
 .section-title-row {
@@ -175,165 +188,147 @@ h2 {
 
 .language-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 17px;
+  /* Čtyři stejné sloupce. 1fr znamená jeden díl dostupné šířky.
+     minmax(0, 1fr) dovolí sloupci zúžit se i při delším obsahu. */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .language-card {
-  min-height: 230px;
   padding: 22px;
   background: var(--light);
-  border: 1px solid var(--border);
+  border-top: 4px solid;
 }
 
 .language-icon {
   display: grid;
+  /* V gridu zarovná obsah vodorovně i svisle na střed. */
+  place-items: center;
   width: 46px;
   height: 46px;
-  margin-bottom: 28px;
+  margin-bottom: 25px;
   color: white;
-  background: var(--dark);
-  border-radius: 2px;
-  font: bold 1rem var(--title-font);
-  place-items: center;
+  border-radius: 3px;
+  font-weight: bold;
 }
 
 .language-card h3 {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-size: 1rem;
 }
 
 .language-card p {
   color: var(--muted-text);
-  font-size: 1rem;
-  line-height: 1.55;
 }
 
 .language-card span {
   color: var(--muted-text);
-  font-size: 1rem;
   font-weight: bold;
 }
 
-/* Zápatí */
+/* Každá karta má vlastní barvu horního okraje a ikony. */
+.python { border-color: var(--python); }
+.python .language-icon { background: var(--python); }
+.javascript { border-color: var(--javascript); }
+.javascript .language-icon { color: var(--dark); background: var(--javascript); }
+.java { border-color: var(--java); }
+.java .language-icon { background: var(--java); }
+.cpp { border-color: var(--cpp); }
+.cpp .language-icon { background: var(--cpp); }
+
+/* Zápatí a odkazy na validátory */
 footer {
-  color: var(--muted-text);
-  background: var(--light);
-  border-top: 1px solid var(--border);
+  color: var(--light-text);
+  background: var(--dark);
 }
 
 .footer-content {
   display: flex;
+  /* Když se obsah nevejde, přesune se na další řádek. */
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  min-height: 88px;
+  gap: 20px;
+  padding: 25px 0;
 }
 
 .footer-content p {
   margin: 0;
-  font-size: 1rem;
 }
 
-#home-page {
-  padding: 8px 10px;
+footer a {
+  color: var(--light-text);
   text-decoration: none;
-  color: var(--muted-text);
-  font-weight: lighter;
 }
 
-#home-page:hover {
-  color: var(--light);
-  background-color: var(--dark);
-  border-radius: 17px;
+footer a:hover {
+  color: var(--yellow);
 }
 
-#ai,
-#author {
-  font-weight: bolder;
+#ai, #author {
+  font-weight: bold;
 }
 
-#ai a {
-  text-decoration: none;
-  color: var(--muted-text);
+.validation-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-#ai a:hover {
-  color: var(--dark);
+.validation-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* Tablet a menší obrazovky */
+.validation-links i {
+  color: var(--yellow);
+  font-size: 2rem;
+}
+
+/* @media použije tato pravidla pouze při šířce okna do 850 px. */
 @media (max-width: 850px) {
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2rem; }
+
   .nav-links span {
     display: none;
   }
 
   .nav-links i {
-    font-size: 1.5rem;
-  }
-
-  h1 {
-    font-size: 3rem;
-  }
-
-  h2 {
     font-size: 2rem;
   }
 
-  .section-heading,
-  .section-title-row {
+  .section-heading, .section-title-row {
     display: block;
   }
 
-  .section-heading p,
-  .small-text {
-    margin-top: 20px;
-  }
-
   .language-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .footer-content {
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 25px 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-/* Mobilní telefony */
+/* Na telefonu se karty i obsah zápatí seskládají pod sebe. */
 @media (max-width: 500px) {
   .navbar {
-    height: 65px;
+    min-height: 65px;
   }
 
-  .nav-links {
-    gap: 8px;
-  }
+  .logo { font-size: 1rem; }
+  .nav-links { gap: 8px; }
+  .nav-links i { font-size: 1rem; }
+  h1 { font-size: 2rem; letter-spacing: 0; }
 
-  .nav-links span {
-    display: none;
-  }
-
-  .nav-links a {
-    font-size: 1.2rem;
-  }
-
-  .hero-content {
-    min-height: 320px;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
+  .hero-content { padding-top: 35px; }
+  .about { padding: 45px 0; }
+  .languages { padding: 45px 0; }
 
   .language-grid {
-    grid-template-columns: auto;
-  }
-  .footer-content {
-    display: block;
+    grid-template-columns: 1fr;
   }
 
-  .footer-content p {
-    margin-top: 12px;
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

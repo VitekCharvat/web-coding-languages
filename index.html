@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="codebase-favicon.svg" type="image/x-icon" />
-    <title>Programovací jazyky</title>
+    <link rel="icon" href="codebase-favicon.svg" type="image/svg+xml" />
+    <title>Programovací jazyky | Školní projekt</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -19,14 +19,14 @@
         <a class="logo" href="#home">code<span>base</span></a>
         <ul class="nav-links">
           <li>
-            <a href="#about" title="O tématu">
+            <a href="#about" title="O tématu" aria-label="O tématu">
               <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
               <span>O tématu</span>
             </a>
           </li>
           <li>
-            <a href="#languages" title="Jazyky">
-              <i class="fa-solid fa-code"></i>
+            <a href="#languages" title="Jazyky" aria-label="Jazyky">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
               <span>Jazyky</span>
             </a>
           </li>
@@ -36,6 +36,8 @@
       <!-- Hlavní text úvodu -->
       <div class="hero-content container">
         <div class="hero-text">
+          <p class="school-notice">Školní projekt – vytvořeno pro výuku HTML a CSS.</p>
+          <p class="eyebrow">SVĚT KÓDU</p>
           <h1>Programovací<br /><span>jazyky.</span></h1>
           <p class="intro">
             Programovací jazyky jsou nástroje, se kterými proměníme nápady ve
@@ -119,8 +121,8 @@
     <!-- Zápatí stránky -->
     <footer>
       <div class="container footer-content">
+        <p><span id="author">© 2026 Vít Charvát</span></p>
         <a id="home-page" href="https://VitekCharvat.github.io">Homepage</a>
-        <p><span id="author">Vít Charvát</span></p>
         <p>
           Bylo použito AI |
           <span id="ai"
@@ -129,6 +131,17 @@
             ></span
           >
         </p>
+        <!-- Odkazy spustí kontrolu publikované stránky ve validátorech W3C. -->
+        <div class="validation-links" aria-label="Validace stránky">
+          <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fvitekcharvat.github.io%2Fweb-coding-languages%2F" target="_blank" rel="noopener noreferrer" title="Zkontrolovat HTML ve validátoru W3C">
+            <i class="fa-brands fa-html5" aria-hidden="true"></i>
+            <span>Validace HTML</span>
+          </a>
+          <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvitekcharvat.github.io%2Fweb-coding-languages%2Fstyle.css" target="_blank" rel="noopener noreferrer" title="Zkontrolovat CSS ve validátoru W3C">
+            <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
+            <span>Validace CSS</span>
+          </a>
+        </div>
       </div>
     </footer>
   </body>
